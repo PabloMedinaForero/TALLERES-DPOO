@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>721</x>
+      <y>497</y>
+      <w>329</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>Cliente
+--
+- id: String
+- correo: String 
+- constrasenia: String
+- historialCompras: Collection[Reserva]
+- programaLealtad(): ProgramaLealtad
+--
++ crearReserva(Funcion funcion, Collection[Asiento] asientos,
+   ProgramaLealtad descuento, Int fecha)
++ agregarReservaNueva(): void
++ getId(): String 
++ getCorreo(): String
++ getHistorialCompras(): Collection[Reserva]
++ generarLealtad(): ProgramaLealtad
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>889</x>
+      <y>665</y>
+      <w>126</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+builds</panel_attributes>
+    <additional_attributes>160.0;230.0;10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1001</x>
+      <y>812</y>
+      <w>154</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>ProgramaLealtad
+--
+- NIVEL_1 = 100: Int 
+- NIVEL_2 = 200: Int 
+- NIVEL_3 = 300: Int
+--
++ ProgramaLealtad(Int nivel): ctr
++ getNivel(): Int
++ descuento(): Int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1148</x>
+      <y>735</y>
+      <w>133</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+descuento</panel_attributes>
+    <additional_attributes>110.0;10.0;110.0;190.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1211</x>
+      <y>385</y>
+      <w>231</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>SistemaAdministrativoReservas
+--
+- reservas: Collection[Reserva]
+- empleados: Collection[Empleados]
+- asientosDisponibles: Collection[Asiento]
+--
++ SistemaAdministrativo(): ctr
++ getEmpleados(): Collection[Empleado]
++ getAsientosDisponibles: Collection[Asietos]
++ agregarReserva(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1218</x>
+      <y>175</y>
+      <w>140</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+empleados
+0..n</panel_attributes>
+    <additional_attributes>180.0;300.0;180.0;200.0;10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1162</x>
+      <y>84</y>
+      <w>133</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Empleado
+--
+- correo: String
+- contrasenia: String
+--
++ Empleado(): ctr
++ getCorreo: String
++ getContrasenia: String
++ generarFuncion(): Funcion 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>959</x>
+      <y>70</y>
+      <w>147</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Asiento
+--
+- numeroAsiento: Int
+- numeroFila: Int
+- tipo: String
+--
++ Asiento(): ctr
++ getNumeroAsiento(): Int
++ getNumeroFila(): Int
++ getTipo(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>700</y>
+      <w>175</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>PeliculaAnimada
+--
+- director: String 
+- actoresPrincipales: Collection[]
+- tematica: String 
+- tecnicaAnimacion: String
+--
++ PeliculaAnimada(String tecnica): ctr
++ getDirector(): String
++ getActoresPrincipales(): String[]
++ getTematica(): String
++ getTecnicaAnimacion(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>700</y>
+      <w>175</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>Largometraje
+--
+- director: String 
+- actoresPrincipales: Collection[]
+- tematica: String 
+--
++ Largometraje(): ctr
++ getDirector(): String
++ getActoresPrincipales(): Collection[]
++ getTematica(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>700</y>
+      <w>175</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Documental
+--
+- director: String 
+- actoresPrincipales: Collection[]
+- tematica: String 
+- narrador:  String
+--
++ Documental(String narrador): crt
++ getDirector(): String
++ getActoresPrincipales(): String
++ getTematica(): String
++ getNarrador(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>581</y>
+      <w>119</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;110.0;10.0;110.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>581</y>
+      <w>21</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>581</y>
+      <w>112</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;140.0;100.0;140.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>315</x>
+      <y>476</y>
+      <w>385</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/Pelicula/
+--
+- titulo: String
+- genero: String
+- duracion: Int
+- clasificacion: Int
+- fechaEstreno: Int
+--
++ Pelicula(String titulo, String genero, Int duracion, Int clasificacion, fechaEstreno): ctr
++ getCaracteristicas(): String[] *</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>350</y>
+      <w>56</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+pelicula</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>224</y>
+      <w>280</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Funcion
+--
+- hora: Int
+- fecha: Int
+- sala : Sala
+- pelicula: Pelicula
+--
++ Funcion(Int hora, Int fecha, Sala sala, Pelicula pelicula): ctr
++ getHora(): Int
++ getFecha(): Int
++ getSala(): Sala
++ getPelicula(): Pelicula</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>791</x>
+      <y>70</y>
+      <w>147</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>Cine
+--
+- nombre: String
+- direccion: String
+- salas: Collection[Sala]
+- funciones: Collecttion[Funcion]
+--
++ Cine(): ctr
++ getNombre(): String
++ getDireccion(): String
++ getSalas(): Collection(Sala)
++ crearFuncion(Sala): Funcion
++ getSala(Sala sala): Sala</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>854</x>
+      <y>210</y>
+      <w>42</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+
+
+salas
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>777</x>
+      <y>280</y>
+      <w>224</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Sala
+--
+- numeroSala: Int
+- capacidadAsientos: Int
+- tipoTecnologia: String
+- asientos: Collection[Asiento]
+- asientosReservados: Collection[Asiento]
+--
++ Sala(): ctr
++ getNumeroSala(): Int
++ getCapacidadAsientos(): Int
++ getTipoTecnologia(): String
++ getAsientos(): Collection[Asiento]
++ quitarAsientoReservado(): void
++ getAsientosReservados(): Collection[Asiento]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>175</y>
+      <w>105</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+
+
+asientos
+</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;90.0;130.0;90.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>630</y>
+      <w>357</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Reserva
+--
+- fecha: Int
+- asientos: Collection[Asientos]
+- descuento: ProgramaLealtad
+--
++ Reserva(Collection[Asientos] asientos, ProgramaLealtad descuento, Int fecha)
++ crearCosto(Collection[Asiento] asientosComprados): Int
++ getFecha(): Int
++ getAsientos(): Collection[Asientos]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1211</x>
+      <y>490</y>
+      <w>56</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+0..n
+reservas</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>287</y>
+      <w>168</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+sala</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;110.0;220.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>994</x>
+      <y>343</y>
+      <w>329</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+ asientosReservados</panel_attributes>
+    <additional_attributes>10.0;20.0;450.0;20.0;450.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>994</x>
+      <y>385</y>
+      <w>231</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+ asientosDisponibles</panel_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1043</x>
+      <y>532</y>
+      <w>91</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+builds</panel_attributes>
+    <additional_attributes>110.0;220.0;40.0;220.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>0</y>
+      <w>777</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+builds</panel_attributes>
+    <additional_attributes>10.0;320.0;10.0;30.0;1090.0;20.0;1090.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>910</y>
+      <w>196</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Cartelera
+--
+- funciones: Collection[Funcion]
+--
++ Cartelera(): ctr
++ getFunciones(): Collection[Funcion]
++ getCaracteristicas(): String[]
++ getFuncion(Funcion funcion): Funcion</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>672</y>
+      <w>56</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+cartelera</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>147</x>
+      <y>280</y>
+      <w>595</w>
+      <h>693</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+ funciones</panel_attributes>
+    <additional_attributes>830.0;960.0;10.0;960.0;10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+</diagram>
